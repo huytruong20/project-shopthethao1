@@ -33,22 +33,22 @@ const teamMembers = [
   {
     name: 'Đặng Quốc Huy',
     role: 'Tổng Giám đốc',
-    gradient: 'from-[#FF6B00] to-[#E55A00]',
+    gradient: 'from-[#111] to-[#333]',
   },
   {
     name: 'Vũ Thanh Hằng',
     role: 'Phó Giám đốc Truyền thông',
-    gradient: 'from-[#00D4FF] to-[#0ea5e9]',
+    gradient: 'from-[#222] to-[#444]',
   },
   {
     name: 'Hoàng Đức Thịnh',
     role: 'Giám đốc Kỹ thuật số',
-    gradient: 'from-[#1E293B] to-[#334155]',
+    gradient: 'from-[#1a1a1a] to-[#3a3a3a]',
   },
   {
     name: 'Bùi Ngọc Linh',
     role: 'Giám đốc Chuỗi cung ứng',
-    gradient: 'from-[#8b5cf6] to-[#6d28d9]',
+    gradient: 'from-[#2a2a2a] to-[#4a4a4a]',
   },
 ];
 
@@ -65,30 +65,26 @@ const brandPartners = [
 
 export default function GioiThieuPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1E293B] via-[#334155] to-[#1E293B] py-20 sm:py-28 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-[#FF6B00] rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#00D4FF] rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-4xl mx-auto text-center text-white relative z-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
+      <section className="bg-[#111] py-24 sm:py-32 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight mb-6">
             Về <span className="text-[#FF6B00]">Hutruong Store</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-white/80 leading-relaxed animate-fade-in-up">
+          <p className="text-lg sm:text-xl font-light text-[#999] leading-relaxed max-w-2xl mx-auto">
             Nơi đam mê thể thao được thắp sáng và mỗi bước chân đều tạo nên cảm hứng
           </p>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="max-w-4xl mx-auto animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1E293B] mb-8 text-center">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#111] mb-10 text-center uppercase tracking-tight">
             Câu Chuyện Của Chúng Tôi
           </h2>
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+          <div className="space-y-8 text-[#555] text-lg font-light leading-[1.8]">
             <p>
               Ra đời vào năm 2020 giữa lòng thị xã An Khê, Gia Lai, Hutruong Store khởi đầu với một ước mơ
               giản dị: biến thể thao trở thành phong cách sống của mọi gia đình Việt. Từ gian hàng đầu tiên
@@ -112,7 +108,7 @@ export default function GioiThieuPage() {
       </section>
 
       {/* Mission / Vision / Values */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((item) => {
@@ -120,15 +116,15 @@ export default function GioiThieuPage() {
               return (
                 <div
                   key={item.title}
-                  className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in-up text-center"
+                  className="border border-[#E5E5E5] rounded-none p-10 text-center hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="w-16 h-16 bg-[#FF6B00]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-[#FF6B00]" />
+                  <div className="w-14 h-14 border border-[#E5E5E5] flex items-center justify-center mx-auto mb-6">
+                    <Icon className="w-7 h-7 text-[#111]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1E293B] mb-4">
+                  <h3 className="text-xl font-black text-[#111] uppercase tracking-wide mb-4">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-[#555] font-light leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -139,23 +135,23 @@ export default function GioiThieuPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#FF6B00] to-[#E55A00]">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white border-y border-[#E5E5E5]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {stats.map((stat) => {
               const Icon = stat.icon;
               return (
                 <div
                   key={stat.label}
-                  className="text-center text-white animate-fade-in-up"
+                  className="text-center"
                 >
-                  <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7" />
+                  <div className="w-12 h-12 border border-[#E5E5E5] flex items-center justify-center mx-auto mb-5">
+                    <Icon className="w-6 h-6 text-[#111]" />
                   </div>
-                  <div className="text-4xl sm:text-5xl font-bold mb-2">
+                  <div className="text-4xl sm:text-5xl font-black text-[#111] mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-white/80 text-lg">{stat.label}</div>
+                  <div className="text-[#999] text-sm uppercase tracking-widest">{stat.label}</div>
                 </div>
               );
             })}
@@ -164,53 +160,53 @@ export default function GioiThieuPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1E293B] mb-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#111] mb-4 uppercase tracking-tight">
             Đội Ngũ Của Chúng Tôi
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-[#999] text-lg font-light max-w-2xl mx-auto">
             Những con người tận tâm đứng sau thành công của Hutruong Store
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="text-center animate-fade-in-up group"
+              className="text-center group"
             >
               <div
-                className={`w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-4xl sm:text-5xl font-bold mb-4 group-hover:scale-105 transition-transform duration-300 shadow-lg`}
+                className={`w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-4xl sm:text-5xl font-light mb-5 group-hover:scale-105 transition-transform duration-300`}
               >
                 {member.name.charAt(0)}
               </div>
-              <h3 className="font-bold text-[#1E293B] text-lg">
+              <h3 className="font-medium text-[#111] text-lg">
                 {member.name}
               </h3>
-              <p className="text-gray-500 text-sm mt-1">{member.role}</p>
+              <p className="text-[#999] text-sm mt-1 font-light">{member.role}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Brand Partners */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[#E5E5E5]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E293B] mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-black text-[#111] mb-4 uppercase tracking-tight">
               Đối Tác Thương Hiệu
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-[#999] text-lg font-light">
               Hợp tác với những thương hiệu thể thao hàng đầu thế giới
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-[#E5E5E5]">
             {brandPartners.map((brand) => (
               <div
                 key={brand}
-                className="bg-white rounded-2xl p-8 flex items-center justify-center border border-gray-100 hover:shadow-lg hover:border-[#FF6B00]/20 transition-all duration-300 animate-fade-in-up"
+                className="bg-white p-10 flex items-center justify-center hover:bg-[#FAFAFA] transition-colors duration-300 group"
               >
-                <span className="text-xl font-bold text-gray-400 group-hover:text-[#1E293B]">
+                <span className="text-lg font-light text-[#999] group-hover:text-[#111] transition-colors duration-300 tracking-wide">
                   {brand}
                 </span>
               </div>
@@ -220,17 +216,17 @@ export default function GioiThieuPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1E293B] mb-6">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#111]">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-6 uppercase tracking-tight">
             Bạn Đã Sẵn Sàng Bứt Phá?
           </h2>
-          <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-[#999] text-lg font-light mb-10 max-w-xl mx-auto leading-relaxed">
             Khám phá bộ sưu tập đồ thể thao chính hãng mới nhất, được tuyển chọn dành riêng cho bạn. Nâng tầm phong cách và hiệu suất ngay bây giờ!
           </p>
           <Link
             href="/"
-            className="inline-block px-10 py-4 bg-[#FF6B00] text-white font-semibold rounded-xl text-lg hover:bg-[#E55A00] transition-colors hover:scale-105 transform duration-300 shadow-lg shadow-[#FF6B00]/30"
+            className="inline-block px-10 py-4 border border-white text-white font-medium text-sm uppercase tracking-widest hover:bg-white hover:text-[#111] transition-all duration-300"
           >
             Bắt Đầu Mua Sắm
           </Link>

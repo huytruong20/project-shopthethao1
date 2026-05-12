@@ -71,40 +71,45 @@ export default function FilterSidebar({
   };
 
   const filterContent = (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Sort */}
       <div>
-        <label className="block text-sm font-bold text-secondary mb-2">Sắp xếp theo</label>
+        <label className="block text-[10px] uppercase tracking-[0.15em] font-semibold text-gray-400 mb-3">
+          Sap xep theo
+        </label>
         <select
           value={filters.sort}
           onChange={(e) => setFilters((prev) => ({ ...prev, sort: e.target.value }))}
-          className="w-full px-3 py-2 border rounded-lg text-sm bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+          className="w-full px-3 py-2 border border-[#E5E5E5] text-sm bg-white text-[#111] outline-none focus:border-[#111] transition-colors"
         >
-          <option value="default">Mặc định</option>
-          <option value="price-asc">Giá tăng dần</option>
-          <option value="price-desc">Giá giảm dần</option>
-          <option value="rating">Đánh giá cao nhất</option>
-          <option value="reviews">Phổ biến nhất</option>
+          <option value="default">Mac dinh</option>
+          <option value="price-asc">Gia tang dan</option>
+          <option value="price-desc">Gia giam dan</option>
+          <option value="rating">Danh gia cao nhat</option>
+          <option value="reviews">Pho bien nhat</option>
         </select>
       </div>
 
       {/* Sports */}
       <div>
-        <button onClick={() => toggleSection("sport")} className="flex items-center justify-between w-full text-sm font-bold text-secondary mb-2">
-          Môn thể thao
-          {openSections.sport ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        <button
+          onClick={() => toggleSection("sport")}
+          className="flex items-center justify-between w-full text-[10px] uppercase tracking-[0.15em] font-semibold text-gray-400 mb-3"
+        >
+          Mon the thao
+          {openSections.sport ? <ChevronUp size={14} className="text-gray-300" /> : <ChevronDown size={14} className="text-gray-300" />}
         </button>
         {openSections.sport && (
-          <div className="space-y-1.5 max-h-48 overflow-y-auto">
+          <div className="space-y-2.5 max-h-48 overflow-y-auto">
             {availableSports.map((sport) => (
-              <label key={sport} className="flex items-center gap-2 cursor-pointer text-sm hover:text-primary transition-colors">
+              <label key={sport} className="flex items-center gap-2.5 cursor-pointer text-sm text-[#333] hover:text-[#111] transition-colors">
                 <input
                   type="checkbox"
                   checked={filters.sports.includes(sport)}
                   onChange={() => toggleFilter("sports", sport)}
-                  className="rounded border-gray-300 text-primary focus:ring-primary"
+                  className="w-3.5 h-3.5 accent-black border-[#E5E5E5] rounded-none"
                 />
-                {sport}
+                <span className="text-[13px]">{sport}</span>
               </label>
             ))}
           </div>
@@ -113,21 +118,24 @@ export default function FilterSidebar({
 
       {/* Brands */}
       <div>
-        <button onClick={() => toggleSection("brand")} className="flex items-center justify-between w-full text-sm font-bold text-secondary mb-2">
-          Thương hiệu
-          {openSections.brand ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        <button
+          onClick={() => toggleSection("brand")}
+          className="flex items-center justify-between w-full text-[10px] uppercase tracking-[0.15em] font-semibold text-gray-400 mb-3"
+        >
+          Thuong hieu
+          {openSections.brand ? <ChevronUp size={14} className="text-gray-300" /> : <ChevronDown size={14} className="text-gray-300" />}
         </button>
         {openSections.brand && (
-          <div className="space-y-1.5 max-h-48 overflow-y-auto">
+          <div className="space-y-2.5 max-h-48 overflow-y-auto">
             {availableBrands.map((brand) => (
-              <label key={brand} className="flex items-center gap-2 cursor-pointer text-sm hover:text-primary transition-colors">
+              <label key={brand} className="flex items-center gap-2.5 cursor-pointer text-sm text-[#333] hover:text-[#111] transition-colors">
                 <input
                   type="checkbox"
                   checked={filters.brands.includes(brand)}
                   onChange={() => toggleFilter("brands", brand)}
-                  className="rounded border-gray-300 text-primary focus:ring-primary"
+                  className="w-3.5 h-3.5 accent-black border-[#E5E5E5] rounded-none"
                 />
-                {brand}
+                <span className="text-[13px]">{brand}</span>
               </label>
             ))}
           </div>
@@ -136,18 +144,21 @@ export default function FilterSidebar({
 
       {/* Price Range */}
       <div>
-        <button onClick={() => toggleSection("price")} className="flex items-center justify-between w-full text-sm font-bold text-secondary mb-2">
-          Khoảng giá
-          {openSections.price ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        <button
+          onClick={() => toggleSection("price")}
+          className="flex items-center justify-between w-full text-[10px] uppercase tracking-[0.15em] font-semibold text-gray-400 mb-3"
+        >
+          Khoang gia
+          {openSections.price ? <ChevronUp size={14} className="text-gray-300" /> : <ChevronDown size={14} className="text-gray-300" />}
         </button>
         {openSections.price && (
           <div className="space-y-2">
             {[
-              { label: "Dưới 500K", range: [0, 500000] as [number, number] },
-              { label: "500K - 1 triệu", range: [500000, 1000000] as [number, number] },
-              { label: "1 - 3 triệu", range: [1000000, 3000000] as [number, number] },
-              { label: "3 - 5 triệu", range: [3000000, 5000000] as [number, number] },
-              { label: "Trên 5 triệu", range: [5000000, 50000000] as [number, number] },
+              { label: "Duoi 500K", range: [0, 500000] as [number, number] },
+              { label: "500K - 1 trieu", range: [500000, 1000000] as [number, number] },
+              { label: "1 - 3 trieu", range: [1000000, 3000000] as [number, number] },
+              { label: "3 - 5 trieu", range: [3000000, 5000000] as [number, number] },
+              { label: "Tren 5 trieu", range: [5000000, 50000000] as [number, number] },
             ].map((opt) => (
               <button
                 key={opt.label}
@@ -157,10 +168,10 @@ export default function FilterSidebar({
                     ? [0, 50000000]
                     : opt.range,
                 }))}
-                className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                className={`w-full text-left px-3 py-1.5 text-[13px] transition-all duration-200 border ${
                   filters.priceRange[0] === opt.range[0] && filters.priceRange[1] === opt.range[1]
-                    ? "bg-primary text-white"
-                    : "bg-surface hover:bg-surface-dark"
+                    ? "border-[#111] text-[#111] bg-[#111] text-white"
+                    : "border-[#E5E5E5] text-[#555] hover:border-[#111] hover:text-[#111]"
                 }`}
               >
                 {opt.label}
@@ -174,9 +185,9 @@ export default function FilterSidebar({
       {activeCount > 0 && (
         <button
           onClick={resetFilters}
-          className="w-full py-2 border-2 border-primary text-primary rounded-lg text-sm font-semibold hover:bg-primary hover:text-white transition-colors"
+          className="text-sm text-gray-400 hover:text-[#111] hover:underline transition-colors"
         >
-          Xóa bộ lọc ({activeCount})
+          Xoa bo loc ({activeCount})
         </button>
       )}
     </div>
@@ -187,20 +198,20 @@ export default function FilterSidebar({
       {/* Mobile toggle */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="lg:hidden flex items-center gap-2 px-4 py-2 bg-white border rounded-lg text-sm font-medium shadow-sm mb-4"
+        className="lg:hidden flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E5E5] text-sm text-[#111] mb-4"
       >
-        <SlidersHorizontal size={16} />
-        Bộ lọc
+        <SlidersHorizontal size={14} />
+        Bo loc
         {activeCount > 0 && (
-          <span className="bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">{activeCount}</span>
+          <span className="bg-[#111] text-white text-[10px] w-4 h-4 flex items-center justify-center">{activeCount}</span>
         )}
       </button>
 
       {/* Desktop sidebar */}
       <div className="hidden lg:block w-64 flex-shrink-0">
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 sticky top-24">
-          <h3 className="font-bold text-secondary mb-4 flex items-center gap-2">
-            <SlidersHorizontal size={18} /> Bộ lọc
+        <div className="bg-white p-6 border border-[#E5E5E5] sticky top-24">
+          <h3 className="text-[10px] uppercase tracking-[0.15em] font-semibold text-gray-400 mb-6 flex items-center gap-2">
+            <SlidersHorizontal size={12} /> Bo loc
           </h3>
           {filterContent}
         </div>
@@ -209,15 +220,17 @@ export default function FilterSidebar({
       {/* Mobile drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
-          <div className="absolute left-0 top-0 h-full w-80 bg-white shadow-2xl overflow-y-auto animate-slide-in">
-            <div className="p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
-              <h3 className="font-bold flex items-center gap-2">
-                <SlidersHorizontal size={18} /> Bộ lọc
+          <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
+          <div className="absolute left-0 top-0 h-full w-80 bg-white overflow-y-auto animate-slide-in">
+            <div className="p-5 border-b border-[#E5E5E5] flex justify-between items-center sticky top-0 bg-white z-10">
+              <h3 className="text-[10px] uppercase tracking-[0.15em] font-semibold text-gray-400 flex items-center gap-2">
+                <SlidersHorizontal size={12} /> Bo loc
               </h3>
-              <button onClick={() => setMobileOpen(false)}><X size={20} /></button>
+              <button onClick={() => setMobileOpen(false)} className="text-gray-400 hover:text-[#111] transition-colors">
+                <X size={18} />
+              </button>
             </div>
-            <div className="p-4">{filterContent}</div>
+            <div className="p-5">{filterContent}</div>
           </div>
         </div>
       )}
